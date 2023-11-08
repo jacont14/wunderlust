@@ -46,3 +46,27 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+:root{
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-gray: #222222;
+    --light-gray: #EAEAEA;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+
+
+body{
+    width: 465px;
+    margin: 0 auto;
+    background-color: var(--white);
+}
+
+
+#plan img {
+    background-color: var(--teal);
+}
