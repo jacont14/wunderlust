@@ -34,14 +34,8 @@ body {
 ol, ul {
     list-style: none;
 }
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
+
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -57,16 +51,735 @@ table {
     --white: #FFFFFF;
     --black: #000000;
 }
-
-
-
-body{
-    width: 465px;
-    margin: 0 auto;
+html{
     background-color: var(--white);
 }
 
+body{
+    box-sizing: border-box;
+    line-height: 1.45;
+    margin: auto 0;
+}
 
-#plan img {
+#skip, .sr-only{
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+#skip:focus{
+position:static;
+width:auto;
+height:auto;
+}
+header{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(85,188,213,1) 100%);
+}
+img{
+    display: grid;
+    width: 100%;
+}
+header img{
+    position: relative;
+    right: 1px;
+    padding: 0.3em;
+   mix-blend-mode: multiply;
+     width: 220px;
+}
+
+h1,h2,h3{
+    font-family:'Molle', cursive; 
+}
+h4, p, q, small, nav, button, form, span{
+    font-family:'Montserrat', sans-serif;;
+}
+h1{
+    font-size: 3rem;
+    margin-left: 0.75em;
+}
+
+p{
+    font-size: 17pt;
+}
+h2{
+    font-size: 2.2rem;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+ 
+#plan{
+    background-color: var(--yellow);
+    text-align: center;
+    padding-bottom: 4rem;
+}
+h3{
+    font-size: 3rem;
+    padding-top: 1em;
+    margin-bottom: -0.5em;
+}
+#testimonials{
+    text-align: center;
+    padding: 50px;
+    margin-top: -20px;
     background-color: var(--teal);
 }
+#testimonials img{
+    padding-top: 10px;
+}
+
+h4{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#about{
+    background-color: var(--blue);
+    text-align: center;
+    padding-left: 3em;
+}
+
+.form-required{
+    display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 100;
+  padding-bottom: 10px;
+  font-style: italic;
+}
+form{
+	display: block;
+	width: 300px;
+	color: var(--black);
+	font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-right: -10px;
+    padding-left: 4rem;
+    
+}
+fieldset{
+    width: 98%;
+	display: grid;
+	grid-template-columns: 1fr;
+    display: block;
+}
+select{
+    border: none;
+    outline: none;
+    background: transparent;
+    appearance: none;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    padding: 1.5em;
+    color: var(--black);
+    font-size: 1.4rem;
+    font-family:'Montserrat', sans-serif;
+    font-weight: 100;
+    margin-left: -0.75em;
+    cursor: pointer;
+  }
+  footer{
+    background-color: var(--light-gray);
+    text-align: center;
+    height: 200px;
+    font-family:'Montserrat', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+   a{
+    text-decoration: none;
+    color: var(--black);
+  }
+  @media screen and (min-width:480px){
+    nav li{
+        list-style: none;
+        border-bottom:1px solid var(--black);
+    }
+    nav ul {
+        display: grid;
+        grid-template-columns:repeat(4, 1fr);
+        display: none;
+        position: relative;
+        width:92.3%;
+        left: 1em;
+        top:0.8em;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        
+      }
+      
+      #menu-toggle label:hover{
+        background-color: var(--black);
+        color: var(--white);
+      }
+      nav {
+        float: right;
+        margin-top: -15em;
+      }
+    
+      nav a {
+        color: var(--black);
+        visibility: visible;
+        display:grid;
+        background-color: var(--teal);
+        text-align:center;
+        text-decoration:none;
+        padding-top: 1rem;
+        padding-bottom: 0.95rem;
+      }
+    
+      nav:hover ul {
+        display: block;
+      }
+    
+      #menu-toggle label{
+        position: relative;
+        top:8px;
+        background-color: var(--yellow);
+        color: black;
+        font-size: 1.5rem;
+        cursor: pointer;
+        text-align: center;
+        font-weight: 600;
+        padding-left: 4em;
+        padding-bottom: 1em;
+        padding-top: 0.75em;
+        text-transform: uppercase;
+        position: relative;
+        padding-right: 3em;
+      }
+    
+      #menu-toggle input{
+        visibility: hidden;
+      }
+      ul {
+        overflow: visible;
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        margin-top: 9px;
+    }
+    
+    ul li{
+        height: 59px;
+        font-size: 0.8em;
+    }
+    #intro p {
+        padding-left: 1em;
+        line-height: 1.8;
+    }
+    h2{
+        padding-left: 1.4rem;
+    }
+    header p{
+        padding-left: 1.7em;
+        margin-bottom: 2em;
+        font-size: 17pt;
+        margin-top: -0.75em;
+        line-height: 1.7;
+    }
+   #img-grid img{
+    height: 350px;
+    padding-top: 2rem;
+   }
+   #img-grid{
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+   }
+   #plan{
+    display: grid;
+    grid-template-columns: 1fr;
+   }
+   #plan img {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid var(--white);
+    border-radius: 1em;
+    background-color: var(--teal);
+    padding: 5em;
+    margin-bottom: -1em;
+    height: 220px;
+  }
+  #plan h3{
+    margin-right: 5rem;
+  }
+  #plan h4{
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    top: 2.5em;
+    font-size: 1.8rem;
+}
+#testimonials h3{
+    padding-bottom: 30px;
+    font-weight: 200;
+    margin-top: -0.5em;
+    position: relative;
+    right: 1em;
+}
+#testimonials q{
+    font-weight: 200;
+    font-style:italic; 
+}
+#testimonials img{
+    padding-top: 10px;
+    width: 50%;
+    padding-left: 6rem;
+    padding-bottom: 1em;
+}
+#about div{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    margin: 10px;
+    padding-bottom: 40px;
+    padding-right: 1.5rem;
+}
+#about h3{
+    padding-bottom: 30px;
+    padding-right: 9rem;
+}
+#about img{
+    padding-top: 20px;
+    width: auto;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+#contact label{
+    display: block;
+	width: 100%;
+	margin: 0.75em 0 0.1em -0.5em;
+}
+#contact input{ 
+    display: block;
+    padding: 0.5em 0.5em;
+	border: 3px solid var(--purple);
+    font-family:'Montserrat', sans-serif;
+}
+#names input{
+    width: 350px;
+    height: 70px;
+    font-size: 1.5rem;
+}
+#nums input{
+    width: 350px;
+    height: 70px;
+    font-size: 1.5rem;
+}
+
+label.radio{
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-gap: 0.5rem;
+  }
+  input[type="radio"]{
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+      }
+      
+      span.radio-control{
+        display: grid;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: 0.2rem solid var(--purple);
+        transform: translateY(-0.05rem);
+        grid-template-columns: 1fr;
+        position: relative;
+        right: 0.2em;
+        margin-bottom: -1em;
+      }
+      .radio-label{
+        position: relative;
+        margin-left: 90px;
+        bottom: 1.4em;
+        font-weight: 100;
+        text-transform: none;
+        font-size: 1.3rem;
+      }
+      
+      .radio-input input:checked + .radio-control{
+        background: radial-gradient(var(--purple) 50%, rgba(255, 0, 0, 0) 51%);
+      }
+      
+      .radio-input input:focus + .radio-control{
+        box-shadow: 0 0 0 0.05rem var(--wht), 0 0 0.15rem 0.1rem var(--purple);
+      }
+      legend{
+        padding-top: 1.5em;
+    }
+      
+    .custom-select{
+      position: relative;
+      display: block;
+      width: 375px;
+      margin: 0 auto;
+      border: 3px solid var(--purple);
+      z-index: 10;
+    }
+    .custom-select:after{
+        position: absolute;
+        right: 0.75em;
+        bottom: -0.1em;
+        width: 50px;
+        height: 100%;
+        line-height: 70px;
+        content: '\2228';
+        text-align: center;
+        color: var(--purple);
+        font-size: 90px;
+        z-index: -1;
+        font-weight: 105;
+        cursor: pointer;
+      }
+    .required{
+        color: var(--purple);
+    }
+    ::-webkit-input-placeholder {
+    color: var(--black);
+    font-family:'Montserrat', sans-serif;
+    font-weight: 100;
+    padding-left: 5px;
+    }
+    input[type=submit]{
+        background-color: var(--purple);
+        color: var(--white);
+        margin-top:1.5em;
+        margin-bottom: 1em;
+        margin-right: 5em;
+        text-transform: uppercase;
+        height: 80px;
+        font-size: 1.3rem;
+        cursor: pointer;
+        width: 127%;
+    }
+    footer p{
+        font-size: 1.2em;
+        padding-top: 1rem;
+    }
+    
+    #contact h3{
+        padding-left: 1.1em;
+    }
+}
+@media screen and (min-width:750px){
+    #menu-toggle label{
+        visibility: hidden;
+        height: 0px;
+        width: 0px;
+    }
+    nav ul{
+        display: grid;
+        grid-column: 2/4;
+       position: absolute;
+       padding-top: 3rem;
+       pointer-events: none;
+       }
+    nav li{
+        padding-right: 20px;
+        border-bottom: none;
+       }
+    nav a{
+        padding-left: 1em;
+        background-color: var(--white);
+        padding: 0.7em;
+        margin-top: 8rem;
+       }
+    header{
+        padding-bottom: 1em;
+    }
+    
+    ul{
+        padding-left: 1.7rem;
+    }
+    header img{
+        padding-top: 3em;
+       }
+    h1 {
+        margin-left: 15rem;
+        position: relative;
+        bottom: 7rem;
+       }
+    header p{
+        margin-left: 13rem;
+        position: relative;
+        bottom: 6rem;
+       }
+    #intro {
+        padding-left: 4em;
+        padding-right: 4em;
+        margin-top: -2em;
+       }
+       #img-grid{
+        display: grid;
+       }
+       #img-grid picture{
+        grid-column: 1/4;
+       }
+       #intro img:first-child{
+        grid-column:2/4;
+        margin-bottom: -35rem;
+        padding-left: 1em;
+        margin-right: -8em;
+       }
+       #intro p{
+        line-height: 1.5;
+        }
+    #testimonials div{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    #testimonials h3{
+            margin-right: 5em;
+        }
+        #testimonials img{
+            padding-left: 4.75rem;
+        }
+    #plan div{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    #plan{
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+    #plan h3{
+            position: relative;
+            right: 8rem;
+        }
+     #about img{
+            padding-top: 20px;
+            width: 70%;
+            height:40%;
+            padding-left: 1rem;
+            padding-bottom: 1rem;
+        }
+
+    #about div{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    #plan img {
+            width: 50%;
+            height: 150px;
+            padding: 4em;
+          }
+    #plan h4{
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+    fieldset{
+       display: flex;
+    }
+    .radio-label{
+        padding-right: 2em;
+    }
+      
+   form {
+    width: 90%;
+   }
+#contact label{
+    display: block;
+	width: 100%;
+	margin: 0.75em 0 0.1em -0.5em;
+}
+#contact input{ 
+    display: block;
+    padding: 0.5em 0.5em;
+	border: 3px solid var(--purple);
+    font-family:'Montserrat', sans-serif;
+}
+#names input{
+    width: 90%;
+    height: 50px;
+    font-size: 1.5rem;
+}
+#nums input{
+    width: 90%;
+    height: 50px;
+    font-size: 1.5rem;
+}
+input[type=submit]{
+   float: right;
+    margin-right: 1.75em;
+    height: 70px;
+    width: 40%;
+    margin-top: 2.5em;
+}  
+select{
+    padding: 1.1em;
+   margin-right: -5em;
+}
+.custom-select{
+    width: 93.4%;
+    margin-left: 0.1em;
+}
+.custom-select:after{
+    right: 0.75em;
+    bottom: 0.25em;
+    width: 40px;
+    height: 80%;
+  }
+  footer{
+    display: flex;
+    padding-top: 1.5em;
+    height: 60px;
+    font-size: 1em;
+    text-align: center;
+  }
+  footer p{
+    padding-right: 1.5em;
+    padding-left:3em;
+    margin-top: -0.9em;
+    font-size: 1rem;
+  }
+  footer a{
+    padding-right: 1em;
+  }
+}
+@media screen and (min-width:1280px){
+nav ul{
+   width: 60%;
+}
+nav li{
+    margin-top: -11em;
+    margin-right: 5px;
+    position: relative;
+    left: 24em;
+}
+#intro{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#intro p{
+    display: grid;
+    grid-column: 1/3;
+    float: left;
+    padding-right: 3em;
+}
+#img-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -4em;
+    
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#plan div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#testimonials div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#intro img{
+height: 200px;
+}
+#plan h3{
+    right: 13em;
+}
+#plan  {
+    padding-bottom: 6em;
+  }
+#testimonials h3{
+   position: relative;
+   right: 21rem;
+  }
+#about img{
+    width: 50%;
+    height:30%;
+    padding-left: 5rem;
+}
+#about h3{
+position: relative;
+right: 17rem;
+}
+  form{
+    padding-bottom: 4em;
+  }
+#contact label{
+display: block;
+width: 100%;
+margin: 0.75em 0 0.1em -0.5em;
+}
+#contact input{ 
+display: block;
+padding: 0.25em 0.25em;
+border: 3px solid var(--purple);
+font-family:'Montserrat', sans-serif;
+}
+#names input{
+    width: 100%;
+    height: 50px;
+    font-size: 1.5rem;
+}
+#nums input{
+    width: 80%;
+    height: 50px;
+    font-size: 1.5rem;
+}
+#names{
+    padding-right: 2em;
+}
+
+h3{
+    font-size: 2.25rem;
+}
+span.radio-control{
+top:-1em;
+
+}
+#nums legend{
+    position: relative;
+    bottom: 0.5em;
+}
+.radio-label{
+    margin-left: 70px;
+    bottom: 2.5em;
+    font-weight: 100;
+    text-transform: none;
+    font-size: 1.3rem;
+  }
+.custom-select{
+    width: 95%;
+    margin-left: -1em;
+    height: 17%;
+}
+.custom-select:after{
+    right: 0.5em;
+    bottom: 0.25em;
+    width: 30px;
+    height: 80%;
+    font-size: 75px;
+  }
+  footer a{
+position: relative;
+left: 30em;
+padding-left: 4em;
+  }
+  footer{
+    height: 40px;
+  }
+  input[type=submit]{    
+     height: 70px;
+     width: 65%;
+ }  
+}
+
